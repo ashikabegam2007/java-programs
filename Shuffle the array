@@ -1,0 +1,26 @@
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int i =0;
+        int arr1[] = new int[n];
+        int arr2[] = new int[n];
+        while(i<n){
+            arr1[i] = nums[i];
+            i++;
+        }
+        int m = n;
+        while(m<(2*n)){
+            arr2[m-n] = nums[m];
+            m++;
+        }
+        int na[] = new int[2*n];
+        int j =0;
+        int k =0;
+        while(j<(2*n)){
+            na[j] = arr1[k];
+            na[j+1] = arr2[k];
+            j+=2;
+            k+=1;
+        }
+        return na;
+    }
+}
